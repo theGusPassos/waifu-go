@@ -1,4 +1,4 @@
-# README #
+Waifu Go (unity version: 5.5.0f3)
 
 This is a school project, made to apply AR technologies in a mobile using Unity.
 
