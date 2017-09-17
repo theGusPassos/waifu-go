@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waifu-GO", "Waifu-GO.csproj", "{4770C9B7-9FA4-1D70-B71C-CD4D017B3E40}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{D5641B68-BFB1-ADC2-61A8-3F36E7C10A1A}") = "Waifu-GO", "Assembly-CSharp.csproj", "{37A7CCA8-991D-3728-A053-72310FC4BE4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4770C9B7-9FA4-1D70-B71C-CD4D017B3E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4770C9B7-9FA4-1D70-B71C-CD4D017B3E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4770C9B7-9FA4-1D70-B71C-CD4D017B3E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4770C9B7-9FA4-1D70-B71C-CD4D017B3E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A7CCA8-991D-3728-A053-72310FC4BE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A7CCA8-991D-3728-A053-72310FC4BE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A7CCA8-991D-3728-A053-72310FC4BE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A7CCA8-991D-3728-A053-72310FC4BE4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

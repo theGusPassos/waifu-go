@@ -7,10 +7,11 @@
   <!ELEMENT girl-speak ANY>
   <!ELEMENT text ANY>
   <!ELEMENT option ANY>
+  <!ELEMENT next-node ANY>
+  <!ELEMENT reaction ANY>
+  <!ELEMENT dialogue-id ANY>
 
   <!ATTLIST script waifu ID #REQUIRED>
-  <!ATTLIST dialogue id CDATA #REQUIRED>
-  <!ATTLIST option id CDATA #REQUIRED>
 ]>
 
 <scenes>
@@ -18,47 +19,65 @@
     <!--every node in the three is considered a dialogue,
     it has one line that the girl will say and x options to the
     player choose-->
-    <dialogue id="entry">
-      
+    <dialogue>
+      <dialogue-id>0</dialogue-id>
       <!--what the girl will say. we may put nodes here 
       to define if she is angry, happy, sad, etc...-->
       <girl-speak>
         <text>Hi, Otaku. How are ya?</text>
+        <reaction>indifferent</reaction>
       </girl-speak>
       
       <!--every option will have a text, and ID that defines 
       which dialogue will be called next, and one var to
       define if the player is saying something good or not-->
-      <option id="1">
+      <option>
         <text>I am fine, how about your ass?</text>  
+        <next-node>1</next-node>
       </option>
     
-      <option id="2">
+      <option>
         <text>DO YOU WANNA DATE ME????</text>
+        <next-node>1</next-node>
+      </option>
+      
+      <option>
+        <text>I am fine as you, pretty little girl</text>
+        <next-node>1</next-node>
       </option>
     
     </dialogue>
   
-    <dialogue id ="1">
+    <dialogue>
+      <dialogue-id>1</dialogue-id>
       <girl-speak>
         <text>You will have to take a look by yourself, senpai...</text>
+        <reaction>indifferent</reaction>
       </girl-speak>    
     
-      <option id="end">
+      <option>
         <text>Okay</text>
+        <next-node>2</next-node>
       </option>
     
-      <option id="end">
+      <option>
         <text>Are you serious? I wasn't...</text>
+        <next-node>1</next-node>
       </option>
     
-      <option id="end">
+      <option>
         <text>?</text>
+        <next-node>1</next-node>
       </option>
     </dialogue>
   
-    <dialogue id="2">
-      
+    <dialogue>
+      <dialogue-id>2</dialogue-id>
+        <girl-speak>
+        <text>KYAAAAAAA!!!!</text>
+        <reaction>indifferent</reaction>
+      </girl-speak> 
     </dialogue>
+  
   </script>
 </scenes>
