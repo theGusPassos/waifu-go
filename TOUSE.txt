@@ -1,0 +1,4 @@
+Device Tracking
+	Habilitar-lo no Vuforia, na licensa
+	Model correction mode: HAND HELD
+	

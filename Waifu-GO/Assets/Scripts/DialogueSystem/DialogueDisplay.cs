@@ -1,8 +1,4 @@
-﻿///
-/// @author GusPassos
-/// 
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace WaifuGO.DialogueSystem

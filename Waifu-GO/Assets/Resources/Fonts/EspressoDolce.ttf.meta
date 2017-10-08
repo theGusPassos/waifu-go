@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0478d4715e6c8ae4482d02d0e09c87f8
+timeCreated: 1507423588
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 50
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Espresso Dolce
+  fontNames:
+  - Espresso Dolce
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
