@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using WaifuGO.GpsSystem;
 
 namespace WaifuGO.MapDisplay
 {
@@ -14,12 +15,11 @@ namespace WaifuGO.MapDisplay
         private Transform   character;
 
         private GameObject  mapTile;
-        private float       longitute = -73.7638f;
-        private float       latitute = 42.6564f;
-        public float        lat_comp;
-        public float        lon_comp;
 
-        public bool         comp = false;
+        private float       longitute;
+        private float       latitute;
+        public float        longituteStandard = -73.7638f;
+        public float        latituteStandard  = 42.6564f;
 
         private void Start()
         {
@@ -48,15 +48,15 @@ namespace WaifuGO.MapDisplay
                 2f * Time.deltaTime
                 );
 
-            if (!comp)
+            if (GPS.gpsConnected)
             {
-                //latitute = GPS.Instance.latitute;
-                //longitute = GPS.Instance.longitute;
+                latitute  = GPS.Instance.GetLatitute();
+                longitute = GPS.Instance.GetLongitute();
             }
             else
             {
-                latitute = lat_comp;
-                longitute = lon_comp;
+                latitute  = latituteStandard;
+                longitute = longituteStandard;
             }
         }
 

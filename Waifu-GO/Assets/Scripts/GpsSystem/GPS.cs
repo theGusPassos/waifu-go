@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace WaifuGO.GpsSystem
 {
@@ -9,10 +12,13 @@ namespace WaifuGO.GpsSystem
 
         public static bool gpsConnected = false;
 
-        public float longitute;
-        public float latitute;
+        public GameObject   errorMessage;
+
+        private float longitute;
+        private float latitute;
 
         private int timeoutSeconds = 30;
+        private int resetTime = 7;
 
         private void Awake()
         {
@@ -22,6 +28,16 @@ namespace WaifuGO.GpsSystem
         private void Start()
         {
             StartCoroutine("StartLocationService");
+        }
+
+        public float GetLatitute()
+        {
+            return Input.location.lastData.latitude;
+        }
+
+        public float GetLongitute()
+        {
+            return Input.location.lastData.longitude;
         }
 
         private void Update()
@@ -39,40 +55,60 @@ namespace WaifuGO.GpsSystem
         {
             Input.location.Start(1f, 0.1f);
 
-            while (
-                Input.location.status == LocationServiceStatus.Initializing &&
-                timeoutSeconds > 0)
+            while ( Input.location.status == LocationServiceStatus.Initializing &&
+                    timeoutSeconds > 0)
             {
                 yield return new WaitForSeconds(1);
                 timeoutSeconds--;
             }
+
+            if (FoundError())
+                yield break;
             
+            gpsConnected = true;
+            yield break;
+        }
+
+        private bool FoundError()
+        {
+            if (!Input.location.isEnabledByUser)
+            {
+                ShowErrorMessage("O dispositivo não está permitindo a conexão com o GPS");
+                return true;
+            }
+
             if (timeoutSeconds <= 0)
             {
-                HandleTimeOut();
-                yield break;
+                ShowErrorMessage("Timeout ao se conectar com o sistema de GPS");
+                return true;
             }
 
             if (Input.location.status == LocationServiceStatus.Failed)
             {
-                HandleFailedStatus();
-                yield break;
+                ShowErrorMessage("Não foi possível se conctar ao sistema de GPS");
+                return true;
             }
-            else
+
+            return false;
+        }
+
+        private void ShowErrorMessage(string message)
+        {
+            StartCoroutine("ResumeAfterError");
+
+            errorMessage.SetActive(true);
+            errorMessage.GetComponentInChildren<Text>().text = message;
+        }
+
+        private IEnumerator ResumeAfterError()
+        {
+            while (resetTime > 0)
             {
-                gpsConnected = true;
-                yield break;
+                resetTime--;
+                yield return new WaitForSeconds(1);
             }
-        }
 
-        private void HandleTimeOut()
-        {
-            print("time out");
-        }
-
-        private void HandleFailedStatus()
-        {
-            print("unable to determine device location");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

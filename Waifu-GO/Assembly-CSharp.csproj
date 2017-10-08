@@ -50,9 +50,12 @@
      <Compile Include="Assets\Scripts\DialogueSystem\ConversationFinisher.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueDisplay.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueLoader.cs" />
+     <Compile Include="Assets\Scripts\GameManager\CharacterSelection.cs" />
      <Compile Include="Assets\Scripts\GameManager\GameStarter.cs" />
+     <Compile Include="Assets\Scripts\GameManager\PlayerSettings.cs" />
      <Compile Include="Assets\Scripts\GpsSystem\GPS.cs" />
      <Compile Include="Assets\Scripts\MapDisplay\TileManager.cs" />
+     <Compile Include="Assets\Scripts\UI\SetCharacterIcon.cs" />
      <None Include="Assets\Database\waifus-dialogue-tree.xml" />
      <None Include="Assets\Database\unit_test.txt" />
  <Reference Include="UnityEngine.UI">
