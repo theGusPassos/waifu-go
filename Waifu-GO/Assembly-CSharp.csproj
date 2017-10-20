@@ -47,15 +47,23 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataPersistance\ProgressLoader.cs" />
-     <Compile Include="Assets\Scripts\DialogueSystem\ConversationFinisher.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueDisplay.cs" />
      <Compile Include="Assets\Scripts\DialogueSystem\DialogueLoader.cs" />
      <Compile Include="Assets\Scripts\GameManager\CharacterSelection.cs" />
+     <Compile Include="Assets\Scripts\GameManager\DialogueStarter.cs" />
      <Compile Include="Assets\Scripts\GameManager\GameStarter.cs" />
      <Compile Include="Assets\Scripts\GameManager\PlayerSettings.cs" />
+     <Compile Include="Assets\Scripts\GameManager\Waifu.cs" />
+     <Compile Include="Assets\Scripts\GameManager\WaifuGenerator.cs" />
+     <Compile Include="Assets\Scripts\GameManager\WaifuManager.cs" />
+     <Compile Include="Assets\Scripts\GameManager\WaifusImageHolder.cs" />
      <Compile Include="Assets\Scripts\GpsSystem\GPS.cs" />
      <Compile Include="Assets\Scripts\MapDisplay\TileManager.cs" />
+     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\UI\HeartCreator.cs" />
+     <Compile Include="Assets\Scripts\UI\MapSpritesHolder.cs" />
      <Compile Include="Assets\Scripts\UI\SetCharacterIcon.cs" />
+     <Compile Include="Assets\Scripts\Utility\ObjectToUp.cs" />
      <None Include="Assets\Database\waifus-dialogue-tree.xml" />
      <None Include="Assets\Database\unit_test.txt" />
  <Reference Include="UnityEngine.UI">

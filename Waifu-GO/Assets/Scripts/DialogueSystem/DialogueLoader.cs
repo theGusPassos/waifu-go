@@ -41,6 +41,8 @@ namespace WaifuGO.DialogueSystem
             
             XmlNode waifuScriptNode = xmlDoc.GetElementById(waifuName);
 
+            Debug.Log(waifuName);
+
             // one dialogue node at time
             foreach(XmlNode dialogueNode in waifuScriptNode.SelectNodes("dialogue"))
             {
@@ -67,22 +69,13 @@ namespace WaifuGO.DialogueSystem
 
         private GirlSpeak GetGirlSpeakInNode(XmlNode node)
         {
-            GirlSpeak girlSpeak = new GirlSpeak();
-
-            girlSpeak.line = node.SelectSingleNode("text").InnerText;
-            girlSpeak.reaction = ParseWaifuReaction(
-                node.SelectSingleNode("reaction").InnerText
-                );
+            GirlSpeak girlSpeak = new GirlSpeak
+            {
+                line        = node.SelectSingleNode("text").InnerText,
+                reaction    = node.SelectSingleNode("reaction").InnerText
+            };
 
             return girlSpeak;
-        }
-
-        private WaifuReaction ParseWaifuReaction(string reaction)
-        {
-            if("indifferent".Equals(reaction))
-                return WaifuReaction.INDIFFERENT;
-            else
-                throw new System.Exception("A waifu reaction is wrong with value: " + reaction);
         }
 
         private Option[] GetOptionsInNode(XmlNode node)
@@ -153,8 +146,8 @@ namespace WaifuGO.DialogueSystem
 
     public struct GirlSpeak
     {
-        public string           line;
-        public WaifuReaction    reaction;
+        public string   line;
+        public string   reaction;
     }
 
     /// <summary>
@@ -165,14 +158,5 @@ namespace WaifuGO.DialogueSystem
         // may have some other vars that defines if this was a good choice or not
         public string   optionLine;
         public int      nextNode;
-    }
-
-    public enum WaifuReaction
-    {
-        ERROR_REACTION,
-        INDIFFERENT,
-        ANGRY,
-        SHY,
-        IN_LOVE
     }
 }

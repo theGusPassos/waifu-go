@@ -1,5 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WaifuGO.GameManager;
+using WaifuGO.Sound;
 
 namespace WaifuGO.DialogueSystem
 {
@@ -9,7 +14,9 @@ namespace WaifuGO.DialogueSystem
     public class DialogueDisplay : MonoBehaviour
     {
         private DialogueLoader          loadDialogue;
-        private ConversationFinisher    conversationFinisher;
+
+        public Image                    waifuImage;
+        private WaifuMood               waifuMoodSprites;
 
         public GameObject[]             buttonsObj = new GameObject[3];
         public Text                     waifuLine;
@@ -21,10 +28,11 @@ namespace WaifuGO.DialogueSystem
         private DialogueNode[]          currentDialogueTree;
         private int                     currentNode;
 
+        public GameObject               restartButton;
+
         private void Awake()
         {
             loadDialogue = new DialogueLoader();    
-            conversationFinisher = GetComponent<ConversationFinisher>();
 
             for(int i = 0; i < buttonsObj.Length; i++)
             {
@@ -32,8 +40,7 @@ namespace WaifuGO.DialogueSystem
                 buttons[i]  = buttonsObj[i].GetComponent<Button>();
             }
 
-            //fortest
-            LoadFirstLine("tsundere");
+            LoadFirstLine(WaifuManager.currentWaifu);
         }
 
         public void SetButtonsEnabled(bool enabled)
@@ -74,9 +81,29 @@ namespace WaifuGO.DialogueSystem
             }
         }
 
+        public void SetWaifuMoodSprites(WaifuMood sprites)
+        {
+            waifuMoodSprites = sprites;
+        }
+
         public void SetWaifuLine(int node)
         {
             waifuLine.text = currentDialogueTree[node].girlSpeak.line;
+            waifuImage.sprite = GetSpriteByMood(currentDialogueTree[node].girlSpeak.reaction);
+        }
+        
+        private Sprite GetSpriteByMood(string mood)
+        {
+            if ("neutral".Equals(mood))
+                return waifuMoodSprites.neutral;
+            if ("shy".Equals(mood))
+                return waifuMoodSprites.shy;
+            if ("madshy".Equals(mood))
+                return waifuMoodSprites.madShy;
+            if ("bored".Equals(mood))
+                return waifuMoodSprites.bored;
+
+            throw new Exception("The mood you typed in the xml doesn't exist: " + mood);
         }
 
         /// <summary>
@@ -86,6 +113,7 @@ namespace WaifuGO.DialogueSystem
         public void ChooseOption(int nextNode)
         {
             Debug.Log("Option chosen: " + nextNode);
+            EventSystem.current.SetSelectedGameObject(null);
 
             currentNode = nextNode;
             
@@ -97,6 +125,7 @@ namespace WaifuGO.DialogueSystem
             else
             {
                 // the last waifu line has no options to choose from
+                SetWaifuLine(currentNode);
                 EndConversation();
             }
         }
@@ -106,10 +135,30 @@ namespace WaifuGO.DialogueSystem
         {
             Debug.Log("ending conversation");
 
+            restartButton.SetActive(true);
+
             SetButtonsEnabled(false);
-            conversationFinisher.NotifyConversationEnd(
-                currentDialogueTree[currentNode].girlSpeak.reaction
-                );
+            //conversationFinisher.NotifyConversationEnd(
+            //    currentDialogueTree[currentNode].girlSpeak.reaction
+            //    );
         }
+
+        public void ReturnToMap()
+        {
+            SoundManager.instance.StartMusic();
+            SceneManager.LoadScene("WorldMap");
+        }
+    }
+
+    [Serializable]
+    public struct WaifuMood
+    {
+        public Sprite neutral;
+        public Sprite bored;
+        public Sprite happy;
+        public Sprite shy;
+        public Sprite madShy;
+        public Sprite mad;
+        public Sprite inLove;
     }
 }

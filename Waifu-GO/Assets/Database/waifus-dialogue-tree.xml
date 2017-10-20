@@ -25,59 +25,125 @@
       to define if she is angry, happy, sad, etc...-->
       <girl-speak>
         <text>Hi, Otaku. How are ya?</text>
-        <reaction>indifferent</reaction>
+        <reaction>neutral</reaction>
       </girl-speak>
       
       <!--every option will have a text, and ID that defines 
       which dialogue will be called next, and one var to
       define if the player is saying something good or not-->
       <option>
-        <text>I am fine, how about your ass?</text>  
-        <next-node>1</next-node>
+        <text>I am fine, what about you?</text>  
+        <next-node>5</next-node>
       </option>
     
       <option>
-        <text>DO YOU WANNA DATE ME????</text>
+        <text>I am really fine, just watched Kimi no na wa.</text>
         <next-node>1</next-node>
       </option>
       
       <option>
-        <text>I am fine as you, pretty little girl</text>
-        <next-node>1</next-node>
+        <text>Not well... I can't find a girlfriend.</text>
+        <next-node>5</next-node>
       </option>
-    
     </dialogue>
-  
+
+    
+    
+
+    <!--I am really fine, just watched Kimi no na wa.-->
     <dialogue>
       <dialogue-id>1</dialogue-id>
       <girl-speak>
-        <text>You will have to take a look by yourself, senpai...</text>
-        <reaction>indifferent</reaction>
+        <text>Kimi no na wa? I was really hyped for this movie!</text>
+        <reaction>neutral</reaction>
       </girl-speak>    
     
       <option>
-        <text>Okay</text>
+        <text>So why didn't you watched it? geez...</text>
+        <next-node>5</next-node>
+      </option>
+    
+      <option>
+        <text>Don't watch it. I am happy because its over.</text>
+        <next-node>5</next-node>
+      </option>
+    
+      <option>
+        <text>So... would you like to watch it with me?</text>
         <next-node>2</next-node>
       </option>
-    
-      <option>
-        <text>Are you serious? I wasn't...</text>
-        <next-node>1</next-node>
-      </option>
-    
-      <option>
-        <text>?</text>
-        <next-node>1</next-node>
-      </option>
     </dialogue>
-  
+
+
+
+    <!--So... would you like to watch it with me?-->
     <dialogue>
       <dialogue-id>2</dialogue-id>
-        <girl-speak>
-        <text>KYAAAAAAA!!!!</text>
-        <reaction>indifferent</reaction>
-      </girl-speak> 
+      <girl-speak>
+        <text>Well... I am not sure...</text>
+        <reaction>shy</reaction>
+      </girl-speak>
+
+      <option>
+        <text>I have it downloaded in my computer, we could watch it in my bedroom...</text>
+        <next-node>3</next-node>
+      </option>
+
+      <option>
+        <text>I could buy tickets for us, and that blonde girlfriend that you have - if you are in this kindofstuff.</text>
+        <next-node>5</next-node>
+      </option>
+
+      <option>
+        <text>Choose wisely, I have other girls to ask.</text>
+        <next-node>5</next-node>
+      </option>
     </dialogue>
-  
+
+
+    <!-->I have it downloaded in my computer, we could watch it in my bedroom...-->
+    <dialogue>
+      <dialogue-id>3</dialogue-id>
+      <girl-speak>
+        <text>What do you mean by that???</text>
+        <reaction>madshy</reaction>
+      </girl-speak>
+
+      <option>
+        <text>I mean exactly what I said.</text>
+        <next-node>5</next-node>
+      </option>
+
+      <option>
+        <text>Don't worry, my parents aren't home...</text>
+        <next-node>4</next-node>
+      </option>
+
+      <option>
+        <text>If you prefer to have a drink or something, idunno...</text>
+        <next-node>5</next-node>
+      </option>
+    </dialogue>
+
+
+    <!--Don't worry, my parents aren't home...-->
+    <dialogue>
+      <dialogue-id>4</dialogue-id>
+      <girl-speak>
+        <text>Well, in that case... Let's go, I think...</text>
+        <reaction>shy</reaction>
+      </girl-speak>
+    </dialogue>
+
+    
+    
+    <dialogue>
+      <dialogue-id>5</dialogue-id>
+      <girl-speak>
+        <text>WHY ARE YOU TRYING TO SAY SOMETHING THAT WASN'T SCRIPTED YET? GEEEZZZ</text>
+        <reaction>madshy</reaction>
+      </girl-speak>
+    </dialogue>
+    
   </script>
 </scenes>

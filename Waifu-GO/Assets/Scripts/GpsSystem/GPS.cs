@@ -44,10 +44,10 @@ namespace WaifuGO.GpsSystem
         {
             if (gpsConnected)
             {
-                print("is enabled: " + Input.location.isEnabledByUser);
+                //print("is enabled: " + Input.location.isEnabledByUser);
 
-                print("longitute: " + Input.location.lastData.longitude);
-                print("latitute: " + Input.location.lastData.latitude);
+                //print("longitute: " + Input.location.lastData.longitude);
+                //print("latitute: " + Input.location.lastData.latitude);
             }
         }
 
@@ -71,11 +71,11 @@ namespace WaifuGO.GpsSystem
 
         private bool FoundError()
         {
-            if (!Input.location.isEnabledByUser)
-            {
-                ShowErrorMessage("O dispositivo não está permitindo a conexão com o GPS");
-                return true;
-            }
+            //if (!Input.location.isEnabledByUser)
+            //{
+            //    ShowErrorMessage("O dispositivo não está permitindo a conexão com o GPS");
+            //    return true;
+            //}
 
             if (timeoutSeconds <= 0)
             {
