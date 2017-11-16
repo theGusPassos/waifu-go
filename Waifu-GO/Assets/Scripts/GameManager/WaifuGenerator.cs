@@ -1,24 +1,33 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using WaifuGo.Managers;
+using WaifuGO.MapDisplay;
 
 namespace WaifuGO.GameManager
 {
-    public class WaifuGenerator : MonoBehaviour
+    public class WaifuGenerator : MonoBehaviour, IEntityManager
     {
         public GameObject parentObject;
 
         public GameObject[] waifus;
 
-        public float timeToWaifuAppear;
+        private TileManager tileManager;
+
+        private float timeToWaifuAppear;
+        public float maxTimeToWaifu;
+        public float minTimeToWaifu;
+
         private float timer;
 
-        public float maxX;
-        public float minX;
-        public float maxY;
-        public float minY;
+        private List<Waifu> waifusInField = new List<Waifu>();
 
         private void Awake()
         {
             timer = timeToWaifuAppear;
+
+            tileManager = GameObject.FindGameObjectWithTag("TileManager").GetComponent<TileManager>();
+
+            timeToWaifuAppear = GetNextTime();
         }
 
         private void Update()
@@ -28,16 +37,40 @@ namespace WaifuGO.GameManager
             if (timer > timeToWaifuAppear)
             {
                 timer = 0;
-                GameObject waifu = Instantiate(waifus[Random.Range(0, waifus.Length)], parentObject.transform);
-                waifu.transform.localPosition = GetRandomPos();
+                timeToWaifuAppear = GetNextTime();
+                SpawnWaifu();
             }
         }
 
-        private Vector2 GetRandomPos()
+        private float GetNextTime()
         {
-            return new Vector2(
-                Random.Range(minX, maxX), Random.Range(minY, maxY)
-                );
+            return Random.Range(minTimeToWaifu, maxTimeToWaifu);
+        }
+
+        private void SpawnWaifu()
+        {
+            float newLat = tileManager.GetLatitute + Random.Range(-0.00005f, 0.00005f);
+            float newLon = tileManager.GetLongitute + Random.Range(-0.00005f, 0.00005f);
+
+            int monsterId = Random.Range(0, waifus.Length);
+            Waifu waifu = Instantiate(waifus[monsterId], Vector3.zero, waifus[monsterId].transform.rotation).GetComponent<Waifu>();
+
+            waifu.tileManager = tileManager;
+            waifu.Init(newLat, newLon);
+            waifusInField.Add(waifu);
+        }
+
+        public void UpdateEntitiesPosition()
+        {
+            if (waifusInField.Count == 0)
+                return;
+
+            Waifu[] waifuList = waifusInField.ToArray();
+
+            for (int i = 0; i < waifuList.Length; i++)
+            {
+                waifuList[i].UpdatePosition();
+            }
         }
     }
 }

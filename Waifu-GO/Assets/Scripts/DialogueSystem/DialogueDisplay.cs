@@ -56,6 +56,19 @@ namespace WaifuGO.DialogueSystem
         /// </summary>
         public void LoadFirstLine(string waifu)
         {
+            if (waifu == "goddess")
+            {
+                waifuImage.GetComponent<RectTransform>().sizeDelta = new Vector2(1167, 1373);
+            }
+            else if (waifu == "trap")
+            {
+                waifuImage.GetComponent<RectTransform>().sizeDelta = new Vector2(957, 1305);
+            }
+            else
+            {
+                waifuImage.GetComponent<RectTransform>().sizeDelta = new Vector2(800, 1280);
+            }
+
             currentDialogueTree = loadDialogue.GetDialogueTree(waifu);
             currentNode = 0;
             SetButtonsEnabled(true);
@@ -112,7 +125,6 @@ namespace WaifuGO.DialogueSystem
         /// <param name="nextNode"></param>
         public void ChooseOption(int nextNode)
         {
-            Debug.Log("Option chosen: " + nextNode);
             EventSystem.current.SetSelectedGameObject(null);
 
             currentNode = nextNode;
@@ -133,8 +145,6 @@ namespace WaifuGO.DialogueSystem
         // TODO: end the conversation wisely
         public void EndConversation()
         {
-            Debug.Log("ending conversation");
-
             restartButton.SetActive(true);
 
             SetButtonsEnabled(false);

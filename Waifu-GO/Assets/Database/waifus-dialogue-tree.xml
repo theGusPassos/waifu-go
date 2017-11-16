@@ -15,6 +15,58 @@
 ]>
 
 <scenes>
+  <script waifu="goddess">
+  
+    <dialogue>
+      <dialogue-id>0</dialogue-id>
+      <girl-speak>
+        <text>...</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+
+      <option>
+        <text>Hello there. Would you got out with me?</text>
+        <next-node>1</next-node>
+      </option>  
+      
+      <option>
+        <text>You look like a goddess!</text>
+        <next-node>2</next-node>
+      </option>  
+      
+      <option>
+        <text>Looks like you could use the D.</text>
+        <next-node>3</next-node>
+      </option> 
+  
+    </dialogue>
+    
+    <dialogue>
+      <dialogue-id>1</dialogue-id>
+      <girl-speak>
+        <text>Sure, it looks like we could have some fun.</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+    
+  <dialogue>
+      <dialogue-id>2</dialogue-id>
+      <girl-speak>
+        <text>Creepy. Bye.</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+    
+  <dialogue>
+      <dialogue-id>3</dialogue-id>
+      <girl-speak>
+        <text>OMG! BYE!</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+  
+  </script>
+    
   <script waifu="tsundere">
     <!--every node in the three is considered a dialogue,
     it has one line that the girl will say and x options to the
@@ -146,4 +198,35 @@
     </dialogue>
     
   </script>
+
+  <script waifu="trap">
+    <dialogue>
+      <dialogue-id>0</dialogue-id>
+      <girl-speak>
+        <text>I am not ready for you yet...</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+  </script>
+
+  <script waifu="kuudere">
+    <dialogue>
+      <dialogue-id>0</dialogue-id>
+      <girl-speak>
+        <text>I am not ready for you yet...</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+  </script>
+  
+  <script waifu="yandere">
+    <dialogue>
+      <dialogue-id>0</dialogue-id>
+      <girl-speak>
+        <text>I am not ready for you yet... ::l</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    </dialogue>
+  </script>
+
 </scenes>

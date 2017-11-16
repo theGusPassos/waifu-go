@@ -7,7 +7,7 @@ namespace WaifuGO.GameManager
     {
         private static DialogueDisplay dialogueDisplay;
 
-        [Tooltip("Tsundere, Kuudere, Yandere")]
+        [Tooltip("Tsundere, Kuudere, Yandere, Trap, Goddess")]
         public WaifuMood[] waifus;
 
         private void Awake()
@@ -26,6 +26,10 @@ namespace WaifuGO.GameManager
                 return waifus[1];
             if("yandere".Equals(waifusName))
                 return waifus[2];
+            if("trap".Equals(waifusName))
+                return waifus[4];
+            if("goddess".Equals(waifusName))
+                return waifus[3];
 
             throw new System.Exception("The waifus name is wrong");
         }

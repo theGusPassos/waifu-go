@@ -41,8 +41,6 @@ namespace WaifuGO.DialogueSystem
             
             XmlNode waifuScriptNode = xmlDoc.GetElementById(waifuName);
 
-            Debug.Log(waifuName);
-
             // one dialogue node at time
             foreach(XmlNode dialogueNode in waifuScriptNode.SelectNodes("dialogue"))
             {

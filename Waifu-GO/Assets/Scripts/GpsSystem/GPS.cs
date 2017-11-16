@@ -53,20 +53,27 @@ namespace WaifuGO.GpsSystem
 
         private IEnumerator StartLocationService()
         {
-            Input.location.Start(1f, 0.1f);
-
-            while ( Input.location.status == LocationServiceStatus.Initializing &&
-                    timeoutSeconds > 0)
+            try
             {
-                yield return new WaitForSeconds(1);
-                timeoutSeconds--;
-            }
+                Input.location.Start(1f, 0.1f);
 
-            if (FoundError())
+                while (Input.location.status == LocationServiceStatus.Initializing &&
+                        timeoutSeconds > 0)
+                {
+                    yield return new WaitForSeconds(1);
+                    timeoutSeconds--;
+                }
+
+                if (FoundError())
+                    yield break;
+
+                errorMessage.SetActive(false);
+                gpsConnected = true;
                 yield break;
-            
-            gpsConnected = true;
-            yield break;
+            }
+            finally
+            {
+            }
         }
 
         private bool FoundError()
@@ -94,7 +101,7 @@ namespace WaifuGO.GpsSystem
 
         private void ShowErrorMessage(string message)
         {
-            StartCoroutine("ResumeAfterError");
+            //StartCoroutine("ResumeAfterError");
 
             errorMessage.SetActive(true);
             errorMessage.GetComponentInChildren<Text>().text = message;

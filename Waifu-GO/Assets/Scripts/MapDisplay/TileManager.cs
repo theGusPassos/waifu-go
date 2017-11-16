@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using WaifuGo.Managers;
+using WaifuGo.SideProject;
+using WaifuGO.GameManager;
 using WaifuGO.GpsSystem;
 
 namespace WaifuGO.MapDisplay
@@ -21,8 +24,35 @@ namespace WaifuGO.MapDisplay
         public float        longituteStandard = -73.7638f;
         public float        latituteStandard  = 42.6564f;
 
+        // Hack
+        public MonsterManager monsterManger;
+        public WaifuGenerator waifuManager;
+
+        private IEntityManager iMonsterManager;
+
+        public float GetLatitute
+        {
+            get
+            {
+                return latitute;
+            }
+        }
+
+        public float GetLongitute
+        {
+            get
+            {
+                return longitute;
+            }
+        }
+
         private void Start()
         {
+            if (waifuManager != null)
+                iMonsterManager = waifuManager;
+            else
+                iMonsterManager = monsterManger;
+
             StartMap();
 
             StartCoroutine(LoadTiles(mapSettings.zoom));
@@ -34,6 +64,8 @@ namespace WaifuGO.MapDisplay
             mapTile.name = "World Map";
             mapTile.transform.localScale = Vector3.one * mapSettings.scale;
 
+            iMonsterManager.UpdateEntitiesPosition();
+
             mapTile.GetComponent<Renderer>().material = mapSettings.material;
             mapTile.transform.parent = transform;
 
@@ -42,6 +74,9 @@ namespace WaifuGO.MapDisplay
 
         private void Update()
         {
+            //print("gps: " + latitute);
+            //print("gps: " + longitute);
+
             character.position = Vector3.Lerp(
                 character.position, 
                 new Vector3(0, 0.25f, 0),
@@ -59,6 +94,8 @@ namespace WaifuGO.MapDisplay
                 longitute = longituteStandard;
             }
         }
+
+        private float i = 0;
 
         private IEnumerator LoadTiles(int zoom)
         {
