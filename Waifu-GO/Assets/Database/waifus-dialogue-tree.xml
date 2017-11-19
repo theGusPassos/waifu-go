@@ -67,7 +67,7 @@
   
   </script>
     
-  <script waifu="tsundere">
+  <script waifu="trap">
     <!--every node in the three is considered a dialogue,
     it has one line that the girl will say and x options to the
     player choose-->
@@ -199,34 +199,360 @@
     
   </script>
 
-  <script waifu="trap">
+  <script waifu="yandere">
     <dialogue>
       <dialogue-id>0</dialogue-id>
       <girl-speak>
-        <text>I am not ready for you yet...</text>
+        <text>Hi senpai!</text>
         <reaction>neutral</reaction>
       </girl-speak>
+
+      <option>
+        <text>You know, "senpai" is not my name...</text>
+        <next-node>1</next-node>
+      </option>
+      
+      <option>
+        <text>Hi. You good?</text>
+        <next-node>2</next-node>
+      </option>
+      
+      <option>
+        <text>You know, you should't treat me differently.</text>
+        <next-node>3</next-node>
+      </option>
+    
     </dialogue>
+  
+  <dialogue>
+    <dialogue-id>1</dialogue-id>
+    <girl-speak>
+      <text>You are so cruel...</text>
+      <reaction>neutral</reaction>
+    </girl-speak>
+  </dialogue>
+    
+    
+  <dialogue>
+    <dialogue-id>2</dialogue-id>
+    <girl-speak>
+      <text>You are so cold, senpai.</text>
+      <reaction>neutral</reaction>
+    </girl-speak>
+  </dialogue>
+    
+      
+  <dialogue>
+    <dialogue-id>3</dialogue-id>
+    <girl-speak>
+      <text>I know, but I can't help. It's you after all, senpai.</text>
+      <reaction>mad</reaction>
+    </girl-speak>
+  
+    <option>
+      <text>So, wanna hangout and have some fun?</text>
+      <next-node>4</next-node>
+    </option>
+    
+    <option>
+      <text>Well, looks like I'll have to spend a lot of time with you, so you'll get used to me.</text>
+      <next-node>5</next-node>
+    </option>
+    
+    <option>
+      <text>Thank you, but that's a little creepy.</text>
+      <next-node>6</next-node>
+    </option>
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>4</dialogue-id>
+    <girl-speak>
+      <text>Of course I do!</text>
+      <reaction>inlove</reaction>
+    </girl-speak>
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>5</dialogue-id>
+    <girl-speak>
+      <text>* passes away *</text>
+      <reaction>inlove</reaction>
+    </girl-speak>
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>6</dialogue-id>
+    <girl-speak>
+      <text>Senpai called me creppy...</text>
+      <reaction>mad</reaction>
+    </girl-speak>
+  </dialogue>
+  
   </script>
 
   <script waifu="kuudere">
     <dialogue>
       <dialogue-id>0</dialogue-id>
       <girl-speak>
-        <text>I am not ready for you yet...</text>
+        <text>Hi.</text>
         <reaction>neutral</reaction>
       </girl-speak>
+    
+      <option>
+        <text>I think you are so pretty...</text>
+        <next-node>2</next-node>
+      </option>
+      
+      <option>
+        <text>I am just passing by, bye.</text>
+        <next-node>1</next-node>
+      </option>
+      
+      <option>
+        <text>My lack of confidence makes it hard to say something or even stare one second at your eyes. Despite this fact, I love want to have kids with you.</text>
+        <next-node>1</next-node>
+      </option>
     </dialogue>
+
+    <!--final dialog-->
+    <dialogue>
+      <dialogue-id>1</dialogue-id>
+      <girl-speak>
+        <text>Okay... bye.</text>
+        <reaction>bored</reaction>
+      </girl-speak>
+    </dialogue>
+    
+    <!--I think you are so pretty...-->
+    <dialogue>
+      <dialogue-id>2</dialogue-id>
+      <girl-speak>
+        <text>Why are you doing this? Did your friends dared you or something?</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    
+      <option>
+        <text>Wha-What? Of course they didn't!</text>
+        <next-node>3</next-node>
+      </option>
+      
+      <option>
+        <text>I don't even have friends.</text>
+        <next-node>7</next-node>
+      </option>
+      
+      <option>
+        <text>Yes, but only to support me!</text>
+        <next-node>8</next-node>
+      </option>
+    </dialogue>
+    
+    <!--Wha-What? Of course they didn't!-->
+    <dialogue>
+      <dialogue-id>3</dialogue-id>
+      <girl-speak>
+        <text>So you are saying you just came to talk to me all form sudden?</text>
+        <reaction>neutral</reaction>
+      </girl-speak>
+    
+      <option>
+        <text>Hm, yes.</text>
+        <next-node>4</next-node>
+      </option>
+      
+      <option>
+        <text>It isn't from sudden. We are from the same class, you know...</text>
+        <next-node>5</next-node>
+      </option>
+      
+      <option>
+        <text>Know what? Never mind.</text>
+        <next-node>6</next-node>
+      </option>
+    </dialogue>
+    
+      
+    <!--Hm, yes-->
+    <dialogue>
+      <dialogue-id>4</dialogue-id>
+      <girl-speak>
+        <text>I love brave guys.</text>
+        <reaction>happy</reaction>
+      </girl-speak>
+   </dialogue>
+    
+    <!--It isn't from sudden. We are from the same-->
+    <dialogue>
+      <dialogue-id>5</dialogue-id>
+      <girl-speak>
+        <text>Are we? Let's go to know each other, then.</text>
+        <reaction>happy</reaction>
+      </girl-speak>
+   </dialogue>
+    
+      
+    <!--Know what? Never mind-->
+    <dialogue>
+      <dialogue-id>6</dialogue-id>
+      <girl-speak>
+        <text>C'mon, don't be like that!</text>
+        <reaction>bored</reaction>
+      </girl-speak>
+   </dialogue>
+    
+        
+    <!---->
+    <dialogue>
+      <dialogue-id>7</dialogue-id>
+      <girl-speak>
+        <text>That's pretty sad, mate. I won't be your friend, tho</text>
+        <reaction>bored</reaction>
+      </girl-speak>
+   </dialogue>
+    
+          
+    <!---->
+    <dialogue>
+      <dialogue-id>8</dialogue-id>
+      <girl-speak>
+        <text>Nanni!? Get lost!</text>
+        <reaction>bored</reaction>
+      </girl-speak>
+   </dialogue>
+
+      
   </script>
   
-  <script waifu="yandere">
+  <script waifu="tsundere">
     <dialogue>
       <dialogue-id>0</dialogue-id>
       <girl-speak>
-        <text>I am not ready for you yet... ::l</text>
+        <text>Hi strange boy.</text>
         <reaction>neutral</reaction>
       </girl-speak>
-    </dialogue>
-  </script>
 
+      <option>
+        <text>I was wondering if you want to join the volley ball clube...</text>
+        <next-node>1</next-node>
+      </option>
+      
+      <option>
+        <text>Do you have a husband?</text>
+        <next-node>2</next-node>
+      </option>
+
+      <option>
+        <text>Girl, I think you are pretty.</text>
+        <next-node>3</next-node>
+      </option>
+    </dialogue>
+    
+  <dialogue>
+    <dialogue-id>1</dialogue-id>
+    <girl-speak>
+      <text>No.</text>
+      <reaction>neutral</reaction>
+    </girl-speak>
+  </dialogue>
+    
+      
+  <dialogue>
+    <dialogue-id>2</dialogue-id>
+    <girl-speak>
+      <text>No.</text>
+      <reaction>neutral</reaction>
+    </girl-speak>
+  </dialogue>
+    
+      
+  <dialogue>
+    <dialogue-id>3</dialogue-id>
+    <girl-speak>
+      <text>Eh? Why would you say that now?</text>
+      <reaction>shy</reaction>
+    </girl-speak>
+
+    <option>
+      <text>Because I wanna hang out with you.</text>
+      <next-node>6</next-node>
+    </option>
+
+    <option>
+      <text>Because I felt like doing it.</text>
+      <next-node>4</next-node>
+    </option>
+    
+    <option>
+      <text>I... I don't know</text>
+      <next-node>5</next-node>
+    </option>
+    
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>4</dialogue-id>
+    <girl-speak>
+      <text>And I feel like saying "get lost".</text>  
+      <reaction>shy</reaction>
+    </girl-speak>
+  </dialogue>
+
+  <dialogue>
+    <dialogue-id>5</dialogue-id>
+    <girl-speak>
+      <text>Nor do I.</text>
+      <reaction>shy</reaction>
+    </girl-speak>
+  </dialogue>
+  
+  <dialogue>
+    <dialogue-id>6</dialogue-id>
+    <girl-speak>
+      <text>And who said I want to hang out with you?</text>
+      <reaction>madshy</reaction>
+    </girl-speak>
+
+    <option>
+      <text>So, you don't?</text>
+      <next-node>7</next-node>
+    </option>
+  
+    <option>
+      <text>No one said, but you will never know until you try, right?</text>
+      <next-node>8</next-node>
+    </option>
+  
+    <option>
+      <text>Your face don't lie.</text>
+      <next-node>9</next-node>
+    </option>
+  </dialogue>
+  
+  <dialogue>
+    <dialogue-id>7</dialogue-id>
+    <girl-speak>
+      <text>Of course I do...</text>  
+      <reaction>madshy</reaction>
+    </girl-speak>
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>8</dialogue-id>
+    <girl-speak>
+      <text>Good thing you tried, then.</text>  
+      <reaction>shy</reaction>
+    </girl-speak>
+  </dialogue>
+    
+  <dialogue>
+    <dialogue-id>9</dialogue-id>
+    <girl-speak>
+      <text>Nanni!??? Ba-Baka!</text>  
+      <reaction>madshy</reaction>
+    </girl-speak>
+  </dialogue>
+  
+  
+  </script>
 </scenes>

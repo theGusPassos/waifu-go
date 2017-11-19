@@ -14,8 +14,8 @@ namespace WaifuGO.GpsSystem
 
         public GameObject   errorMessage;
 
-        private float longitute;
-        private float latitute;
+        //private float longitute;
+        //private float latitute;
 
         private int timeoutSeconds = 30;
         private int resetTime = 7;
@@ -27,7 +27,7 @@ namespace WaifuGO.GpsSystem
 
         private void Start()
         {
-            StartCoroutine("StartLocationService");
+            //StartCoroutine("StartLocationService");
         }
 
         public float GetLatitute()
@@ -42,13 +42,6 @@ namespace WaifuGO.GpsSystem
 
         private void Update()
         {
-            if (gpsConnected)
-            {
-                //print("is enabled: " + Input.location.isEnabledByUser);
-
-                //print("longitute: " + Input.location.lastData.longitude);
-                //print("latitute: " + Input.location.lastData.latitude);
-            }
         }
 
         private IEnumerator StartLocationService()
@@ -78,11 +71,11 @@ namespace WaifuGO.GpsSystem
 
         private bool FoundError()
         {
-            //if (!Input.location.isEnabledByUser)
-            //{
-            //    ShowErrorMessage("O dispositivo não está permitindo a conexão com o GPS");
-            //    return true;
-            //}
+            if (!Input.location.isEnabledByUser)
+            {
+                ShowErrorMessage("O dispositivo não está permitindo a conexão com o GPS");
+                return true;
+            }
 
             if (timeoutSeconds <= 0)
             {

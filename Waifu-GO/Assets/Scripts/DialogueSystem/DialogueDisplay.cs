@@ -115,6 +115,12 @@ namespace WaifuGO.DialogueSystem
                 return waifuMoodSprites.madShy;
             if ("bored".Equals(mood))
                 return waifuMoodSprites.bored;
+            if ("happy".Equals(mood))
+                return waifuMoodSprites.happy;
+            if ("inlove".Equals(mood))
+                return waifuMoodSprites.inLove;
+            if ("mad".Equals(mood))
+                return waifuMoodSprites.mad;
 
             throw new Exception("The mood you typed in the xml doesn't exist: " + mood);
         }

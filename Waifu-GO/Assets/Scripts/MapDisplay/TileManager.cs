@@ -95,8 +95,6 @@ namespace WaifuGO.MapDisplay
             }
         }
 
-        private float i = 0;
-
         private IEnumerator LoadTiles(int zoom)
         {
             while (showMap)
