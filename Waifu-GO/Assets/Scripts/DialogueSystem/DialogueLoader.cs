@@ -62,6 +62,11 @@ namespace WaifuGO.DialogueSystem
 
             dialogueNode.options = GetOptionsInNode(node);
 
+            if (dialogueNode.options.Length == 0)
+            {
+                dialogueNode.happyEnding = bool.Parse(node.SelectSingleNode("happy-ending").InnerText);
+            }
+
             return dialogueNode;
         }
 
@@ -140,6 +145,7 @@ namespace WaifuGO.DialogueSystem
         public int          id;
         public GirlSpeak    girlSpeak;
         public Option[]     options;
+        public bool         happyEnding;
     }
 
     public struct GirlSpeak

@@ -30,6 +30,9 @@ namespace WaifuGO.DialogueSystem
 
         public GameObject               restartButton;
 
+        public Image                    conversationResult;
+        public Sprite[]                  resultIcons;
+
         private void Awake()
         {
             loadDialogue = new DialogueLoader();    
@@ -41,6 +44,8 @@ namespace WaifuGO.DialogueSystem
             }
 
             LoadFirstLine(WaifuManager.currentWaifu);
+
+            conversationResult.gameObject.SetActive(false);
         }
 
         public void SetButtonsEnabled(bool enabled)
@@ -144,8 +149,23 @@ namespace WaifuGO.DialogueSystem
             {
                 // the last waifu line has no options to choose from
                 SetWaifuLine(currentNode);
+                ShowResult(currentNode);
                 EndConversation();
             }
+        }
+
+        public void ShowResult(int currentNode)
+        {
+            if (currentDialogueTree[currentNode].happyEnding)
+            {
+                conversationResult.sprite = resultIcons[0];
+            }
+            else
+            {
+                conversationResult.sprite = resultIcons[1];
+            }
+
+            conversationResult.gameObject.SetActive(true);
         }
 
         // TODO: end the conversation wisely

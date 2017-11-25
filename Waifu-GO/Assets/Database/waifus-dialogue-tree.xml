@@ -10,6 +10,7 @@
   <!ELEMENT next-node ANY>
   <!ELEMENT reaction ANY>
   <!ELEMENT dialogue-id ANY>
+  <!ELEMENT happy-ending ANY>
 
   <!ATTLIST script waifu ID #REQUIRED>
 ]>
@@ -47,6 +48,7 @@
         <text>Sure, it looks like we could have some fun.</text>
         <reaction>neutral</reaction>
       </girl-speak>
+      <happy-ending>true</happy-ending>
     </dialogue>
     
   <dialogue>
@@ -55,6 +57,7 @@
         <text>Creepy. Bye.</text>
         <reaction>neutral</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
     </dialogue>
     
   <dialogue>
@@ -63,6 +66,7 @@
         <text>OMG! BYE!</text>
         <reaction>neutral</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
     </dialogue>
   
   </script>
@@ -85,7 +89,7 @@
       define if the player is saying something good or not-->
       <option>
         <text>I am fine, what about you?</text>  
-        <next-node>5</next-node>
+        <next-node>6</next-node>
       </option>
     
       <option>
@@ -133,7 +137,7 @@
       <dialogue-id>2</dialogue-id>
       <girl-speak>
         <text>Well... I am not sure...</text>
-        <reaction>shy</reaction>
+        <reaction>neutral</reaction>
       </girl-speak>
 
       <option>
@@ -158,7 +162,7 @@
       <dialogue-id>3</dialogue-id>
       <girl-speak>
         <text>What do you mean by that???</text>
-        <reaction>madshy</reaction>
+        <reaction>neutral</reaction>
       </girl-speak>
 
       <option>
@@ -183,8 +187,9 @@
       <dialogue-id>4</dialogue-id>
       <girl-speak>
         <text>Well, in that case... Let's go, I think...</text>
-        <reaction>shy</reaction>
+        <reaction>happy</reaction>
       </girl-speak>
+      <happy-ending>true</happy-ending>
     </dialogue>
 
     
@@ -192,9 +197,19 @@
     <dialogue>
       <dialogue-id>5</dialogue-id>
       <girl-speak>
-        <text>WHY ARE YOU TRYING TO SAY SOMETHING THAT WASN'T SCRIPTED YET? GEEEZZZ</text>
-        <reaction>madshy</reaction>
+        <text>Hahahah... You are just like the other girls said. Bye.</text>
+        <reaction>neutral</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
+    </dialogue>
+    
+    <dialogue>
+      <dialogue-id>6</dialogue-id>
+      <girl-speak>
+        <text>Minding my own business, you should do the same.</text>
+        <reaction>happy</reaction>
+      </girl-speak>
+      <happy-ending>false</happy-ending>
     </dialogue>
     
   </script>
@@ -230,6 +245,7 @@
       <text>You are so cruel...</text>
       <reaction>neutral</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
     
     
@@ -271,6 +287,7 @@
       <text>Of course I do!</text>
       <reaction>inlove</reaction>
     </girl-speak>
+    <happy-ending>true</happy-ending>
   </dialogue>
     
   <dialogue>
@@ -279,6 +296,7 @@
       <text>* passes away *</text>
       <reaction>inlove</reaction>
     </girl-speak>
+    <happy-ending>true</happy-ending>
   </dialogue>
     
   <dialogue>
@@ -287,6 +305,7 @@
       <text>Senpai called me creppy...</text>
       <reaction>mad</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
   
   </script>
@@ -380,6 +399,7 @@
         <text>I love brave guys.</text>
         <reaction>happy</reaction>
       </girl-speak>
+      <happy-ending>true</happy-ending>
    </dialogue>
     
     <!--It isn't from sudden. We are from the same-->
@@ -389,6 +409,7 @@
         <text>Are we? Let's go to know each other, then.</text>
         <reaction>happy</reaction>
       </girl-speak>
+      <happy-ending>true</happy-ending>
    </dialogue>
     
       
@@ -399,6 +420,7 @@
         <text>C'mon, don't be like that!</text>
         <reaction>bored</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
    </dialogue>
     
         
@@ -409,6 +431,7 @@
         <text>That's pretty sad, mate. I won't be your friend, tho</text>
         <reaction>bored</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
    </dialogue>
     
           
@@ -419,6 +442,7 @@
         <text>Nanni!? Get lost!</text>
         <reaction>bored</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
    </dialogue>
 
       
@@ -454,6 +478,7 @@
       <text>No.</text>
       <reaction>neutral</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
     
       
@@ -463,6 +488,7 @@
       <text>No.</text>
       <reaction>neutral</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
     
       
@@ -496,6 +522,7 @@
       <text>And I feel like saying "get lost".</text>  
       <reaction>shy</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
 
   <dialogue>
@@ -504,6 +531,7 @@
       <text>Nor do I.</text>
       <reaction>shy</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
   
   <dialogue>
@@ -535,6 +563,7 @@
       <text>Of course I do...</text>  
       <reaction>madshy</reaction>
     </girl-speak>
+    <happy-ending>true</happy-ending>
   </dialogue>
     
   <dialogue>
@@ -543,6 +572,7 @@
       <text>Good thing you tried, then.</text>  
       <reaction>shy</reaction>
     </girl-speak>
+    <happy-ending>true</happy-ending>
   </dialogue>
     
   <dialogue>
@@ -551,6 +581,7 @@
       <text>Nanni!??? Ba-Baka!</text>  
       <reaction>madshy</reaction>
     </girl-speak>
+    <happy-ending>true</happy-ending>
   </dialogue>
   
   
