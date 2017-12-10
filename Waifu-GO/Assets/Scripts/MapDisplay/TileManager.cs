@@ -74,23 +74,23 @@ namespace WaifuGO.MapDisplay
 
         private void Update()
         {
-            //print("gps: " + latitute);
-            //print("gps: " + longitute);
+            ////print("gps: " + latitute);
+            ////print("gps: " + longitute);
 
             character.position = Vector3.Lerp(
-                character.position, 
+                character.position,
                 new Vector3(0, 0.25f, 0),
                 2f * Time.deltaTime
                 );
 
             if (GPS.gpsConnected)
             {
-                latitute  = GPS.Instance.GetLatitute();
+                latitute = GPS.Instance.GetLatitute();
                 longitute = GPS.Instance.GetLongitute();
             }
             else
             {
-                latitute  = latituteStandard;
+                latitute = latituteStandard;
                 longitute = longituteStandard;
             }
         }

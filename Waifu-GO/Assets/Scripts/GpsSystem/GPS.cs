@@ -27,7 +27,7 @@ namespace WaifuGO.GpsSystem
 
         private void Start()
         {
-            //StartCoroutine("StartLocationService");
+            StartCoroutine("StartLocationService");
         }
 
         public float GetLatitute()

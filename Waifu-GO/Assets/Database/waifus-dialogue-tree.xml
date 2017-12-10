@@ -255,6 +255,7 @@
       <text>You are so cold, senpai.</text>
       <reaction>neutral</reaction>
     </girl-speak>
+    <happy-ending>false</happy-ending>
   </dialogue>
     
       
@@ -341,6 +342,7 @@
         <text>Okay... bye.</text>
         <reaction>bored</reaction>
       </girl-speak>
+      <happy-ending>false</happy-ending>
     </dialogue>
     
     <!--I think you are so pretty...-->
