@@ -1,4 +1,6 @@
-Waifu Go (unity version: 5.5.0f3)
+# Waifu Go (unity version: 5.5.0f3)
+
+![test](/images/waifu-go.png)
 
 This is a school project, made to apply AR technologies in a mobile using Unity.
 
@@ -13,4 +15,4 @@ the city, and even see her standing there with his phone camera.
 The game is not finished, it is just a project to learn about those
 features in Unity.
 
-- gus
+
