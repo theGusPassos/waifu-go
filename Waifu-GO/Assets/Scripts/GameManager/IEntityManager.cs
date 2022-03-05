@@ -1,1 +1,0 @@
-﻿using System.Collections;using System.Collections.Generic;using UnityEngine;namespace WaifuGo.Managers{    public interface IEntityManager    {        void UpdateEntitiesPosition();    }}
